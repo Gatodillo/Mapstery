@@ -43,9 +43,9 @@ $(document).ready(function () {
     var clickDistanceHint;
     var countryRevealZoom;
     const exploreButtonMarkup =
-      "<button type='button' class='btn btn-primary' data-dismiss='modal'>Explore the Map</button>";
+      "<button type='button' class='btn btn-primary' data-dismiss='modal'>Explorar el mapa</button>";
     const playAgainLinkMarkup =
-      "<a href='javascript:window.location.reload()'>Play Mapstery Again</a>";
+      "<a href='javascript:window.location.reload()'>Jugar de nuevo</a>";
 
     /**
      * ask user to select which type of game they want to play
@@ -120,9 +120,9 @@ $(document).ready(function () {
             geocoder.geocode({'location': latlng}, function (results, status) {
                 if (status !== google.maps.GeocoderStatus.OK) {
                     $(".modal").modal('show');
-                    $(".modal").html("You clicked on unknown territory! " +
+                    $(".modal").html("Este es un territorio desconocido! " +
                         "<div id='proceed_button' class='modalInstructions'>" +
-                        "<button type='button' class='btn btn-primary' data-dismiss='modal'>Try Again</button>" +
+                        "<button type='button' class='btn btn-primary' data-dismiss='modal'>Intenta de  nuevo</button>" +
                         "</div>"
                     );
                 } else {
@@ -152,7 +152,7 @@ $(document).ready(function () {
                                 victoryDisplay(countryToClickName);
                             } else {
                                 $(".modal").modal('show');
-                                $(".modal").html("You clicked on " + clickLocationData.country.name);
+                                $(".modal").html("Hiciste clic sobre " + clickLocationData.country.name);
                                 placeMarker(event.latLng, 'red', clickLocationData.country.code);
 
                                 //determine the supplementary message to display upon click
@@ -174,7 +174,7 @@ $(document).ready(function () {
                             }
                         } else {
                             $(".modal").modal('show');
-                            $(".modal").html("You clicked on " + clickLocationData.country.name);
+                            $(".modal").html("Hiciste clic sobre " + clickLocationData.country.name);
                             constructHint(mapRevealed);
                         }
                     } else if (selectedGameType === 'usStates' && clickLocationData.state) {
@@ -184,27 +184,27 @@ $(document).ready(function () {
                                 victoryDisplay(clickLocationData.state.name);
                             } else {
                                 $(".modal").modal('show');
-                                $(".modal").html("You clicked on " + 
+                                $(".modal").html("Hiciste clic sobre" + 
                                     `${clickLocationData.state.name ? `${clickLocationData.state.name}` : ''}` + 
                                     `${clickLocationData.country.code !== "US" ? `, ${clickLocationData.country.name}` : ''}` +
                                     "<div id='proceed_button' class='modalInstructions'>" +
-                                    "<button type='button' class='btn btn-primary' data-dismiss='modal'>Try Again</button>" +
+                                    "<button type='button' class='btn btn-primary' data-dismiss='modal'>Intenta de nuevo</button>" +
                                     "</div>"
                                 );
                                 placeMarker(event.latLng, 'red', clickLocationData.state.code);
                             }
                         } else {
                             $(".modal").modal('show');
-                            $(".modal").html("You clicked on " + 
+                            $(".modal").html("Hiciste clic sobre " + 
                                 `${clickLocationData.state.name ? `${clickLocationData.state.name},` : ''} ${clickLocationData.country.name}` 
                             );
                             constructHint(mapRevealed);
                         }
                     } else if (clickLocationData.natural_feature) {
                         $(".modal").modal('show');
-                        $(".modal").html(`You clicked on ${clickLocationData.natural_feature.startsWith("Lake") ? `` : `the`} ${clickLocationData.natural_feature}` +
+                        $(".modal").html(`Hiciste clic sobre ${clickLocationData.natural_feature.startsWith("Lake") ? `` : `el`} ${clickLocationData.natural_feature}` +
                             "<div id='proceed_button' class='modalInstructions'>" +
-                            `<button type='button' class='btn btn-primary' data-dismiss='modal'>${mapRevealed ? 'Continue' : 'Try Again'}</button>` +
+                            `<button type='button' class='btn btn-primary' data-dismiss='modal'>${mapRevealed ? 'Continuar' : 'Intentar de nuevo'}</button>` +
                             "</div>"
                         );
                     }
@@ -264,12 +264,12 @@ $(document).ready(function () {
         prepareStateMetadata(randStateNum);
 
         $(".modal").modal('show');
-        $(".modal").html("Click on " + targetState.name +
+        $(".modal").html("Haz clic sobre " + targetState.name +
             "<div id='proceed_button' class='modalInstructions'>" +
-            "<button type='button' class='btn btn-primary' data-dismiss='modal'>Click to start playing</button></div>"
+            "<button type='button' class='btn btn-primary' data-dismiss='modal'>Haz clic para jugar!</button></div>"
         );
         $(".well").show();
-        $(".well").html("Click on " + targetState.name);
+        $(".well").html("Clic sobre " + targetState.name);
     }
 
     function setUpCountry(countriesDataArray) {
@@ -331,15 +331,15 @@ $(document).ready(function () {
         }
 
         $(".modal").modal('show');
-        $(".modal").html("Click on " + countryToClickName +
+        $(".modal").html("Haz clic sobre " + countryToClickName +
             "<img class='targetFlag' src=" + countryToClickFlag + "></img>" +
             "<div id='proceed_button' class='modalInstructions'>" +
-            "<button type='button' class='btn btn-primary' data-dismiss='modal'>Click to start playing</button></div>"
+            "<button type='button' class='btn btn-primary' data-dismiss='modal'>Haz clic para jugar</button></div>"
         );
         $(".well").show();
-        $(".well").html("Click on " + countryToClickName +
+        $(".well").html("Haz clic sobre " + countryToClickName +
             "<img class='targetFlagWell' src=" + countryToClickFlag + "></img>" +
-            "<div id='reveal-country'>Or click here to reveal " + countryToClickName + "</div>");
+            "<div id='reveal-country'>O haz clic para ubicar " + countryToClickName + "</div>");
     }
 
     /* this stackoverflow helped me get my google maps call working:
@@ -390,18 +390,18 @@ $(document).ready(function () {
         if (isMapRevealed === false) {
 
             if (distFromTarget.closerClick === true) {
-                clickDistanceHint = "You're getting warmer!";
+                clickDistanceHint = "Te estas acercando!";
             } else if (distFromTarget.closerClick === false) {
-                clickDistanceHint = "You're getting colder."
+                clickDistanceHint = "Te estas alejando."
             } else {
                 clickDistanceHint = "";
             }
 
             $(".modal").append("<p class='modalInstructions'>" +
-                clickDistanceHint + " Your click was about " + distFromTarget.miles +
-                " Miles (" + distFromTarget.kilometers + " Kilometers) from " +
+                clickDistanceHint + " Estuviste a " + distFromTarget.miles +
+                " millas (" + distFromTarget.kilometers + " kilometros) de " +
                 countryToClickName + "<div id='proceed_button' class='modalInstructions'>" +
-                "<button type='button' class='btn btn-primary' data-dismiss='modal'>Try Again</button>" +
+                "<button type='button' class='btn btn-primary' data-dismiss='modal'>Intenta de nuevo</button>" +
                 "</div>"
             );
             if (borderCountryClickedIndex >= 0) {
@@ -416,28 +416,28 @@ $(document).ready(function () {
 
                 if (modifiedBorderCountryNames.length === 0) {
                     $(".modal").append("<p class='modalInstructions'>" +
-                        clickedCountryName + " is the only country that shares a border with " +
+                        clickedCountryName + " es el único oaís que comparte una frontera con " +
                         countryToClickName + "!");
                 } else if (modifiedBorderCountryNames.length === 1) {
                     $(".modal").append("<p class='modalInstructions'>" +
-                        countryToClickName + " shares a border with " + clickedCountryName + " and " +
+                        countryToClickName + " comparte una frontera con " + clickedCountryName + " y " +
                         borderCountryList);
                 } else {
                     $(".modal").append("<p class='modalInstructions'>" +
-                        countryToClickName + " shares a border with " + clickedCountryName +
-                        ", as well as " + borderCountryList);
+                        countryToClickName + " comparte una frontera con " + clickedCountryName +
+                        ", también con " + borderCountryList);
                 }
             } else if (numClicks > 5) {
 
                 if (borderCount === 0) {
                     $(".modal").append("<p class='modalInstructions'>" +
-                        "Hint: " + countryToClickName + " is an island nation in " +
+                        "Pista: " + countryToClickName + " is an island nation in " +
                         regionHint + "</p>");
                 } else {
                     constructBorderCountryList(borderCountryNames);
                     $(".modal").append("<p class='modalInstructions'>" +
-                        "Hint: " + countryToClickName + " is in " + regionHint +
-                        " and shares a border with " + borderCountryList);
+                        "Pista: " + countryToClickName + " esta en " + regionHint +
+                        " y comparte una frontera con " + borderCountryList);
                 }
             }
         } else {
@@ -501,9 +501,9 @@ $(document).ready(function () {
         $(".modal").modal('show');
         var msg = "";
         if (markers.length === 1) {
-            msg = "Fantastic! You found " + targetCountryName + " on the first try!"
+            msg = "Excelente! Encontraste " + targetCountryName + " en el primer intento!"
         } else {
-            msg = "You found " + targetCountryName + " after " + markers.length + " tries!"
+            msg = "Encontraste " + targetCountryName + " después de " + markers.length + " intentos!"
         }
 
         mapRevealed = true;
@@ -586,12 +586,12 @@ $(document).ready(function () {
     function countryMetadataMarkup() {
       return "<p class='modalInstructions'>" +
       "<img class='bonusCountryFlag' src=" + countryMetadata.flag + "></img><br>" +
-      "Population: " + countryMetadata.population + "<br>" +
-      (countryMetadata.capital ? "Capital City: " + countryMetadata.capital + "<br>" : "") +
-      (countryMetadata.demonym ? "Demonym: " + countryMetadata.demonym + "<br>" : "") +
-      (countryMetadata.multiple_currencies ? 'Currencies: ' : 'Currency: ') +
+      "Población: " + countryMetadata.population + "<br>" +
+      (countryMetadata.capital ? "Ciudad capital " + countryMetadata.capital + "<br>" : "") +
+      (countryMetadata.demonym ? "Gentilicio: " + countryMetadata.demonym + "<br>" : "") +
+      (countryMetadata.multiple_currencies ? 'Monedas: ' : 'Moneda: ') +
       countryMetadata.currencies + "<br>" +
-      (countryMetadata.multiple_languages ? 'Languages: ' : 'Language: ') +
+      (countryMetadata.multiple_languages ? 'Idiomas: ' : 'Idioma: ') +
       countryMetadata.languages + "<br>" +
       exploreButtonMarkup + "</p>"
     }
@@ -608,10 +608,10 @@ $(document).ready(function () {
 
     function stateMetadataMarkup() {
       return "<div class='modalInstructions'>" +
-      "Population: " + stateMetadata.population + "<br>" +
-      (stateMetadata.capital ? "Capital City: " + stateMetadata.capital + "<br>" : "") +
-      "Largest City: " + stateMetadata.largest_city + "<br>" +
-      "Nickname: " + stateMetadata.nickname + "<br>" +
+      "Población: " + stateMetadata.population + "<br>" +
+      (stateMetadata.capital ? "Capital: " + stateMetadata.capital + "<br>" : "") +
+      "Ciudad más grande: " + stateMetadata.largest_city + "<br>" +
+      "Alias: " + stateMetadata.nickname + "<br>" +
       exploreButtonMarkup + "</div>"
     }
 
