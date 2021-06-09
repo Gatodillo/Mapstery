@@ -1,4 +1,5 @@
 var usStateData = require('./data/us-states');
+var mxStateData = require('./data/mx-states');
 
 $(document).ready(function () {
     "use strict";
