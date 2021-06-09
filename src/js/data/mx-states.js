@@ -47,38 +47,38 @@ const mxStateData = [
   {
     name: 'Chihuahua',
     abbr: 'Chih.',
-    area: '6446SKM',
-    largest_city: 'Wilmington',
-    capital: 'Dover',
-    nickname: 'First State',
-    population: 971180
+    area: '247,455 km2',
+    largest_city: 'Ciudad Juárez',
+    capital: 'Chihuahua ',
+    nickname: 'Estado Libre y Soberano de Chihuahua',
+    population: 3741869
   },
   {
     name: 'Ciudad de México',
     abbr: 'C.D.Mx.',
-    area: '170312SKM',
-    largest_city: 'Jacksonville',
-    capital: 'Tallahassee',
-    nickname: 'Sunshine State',
-    population: 21312211
+    area: '1,495 km2',
+    largest_city: 'N/A',
+    capital: 'N/A',
+    nickname: 'Ciudad de México',
+    population: 9209944
   },
   {
     name: 'Coahuila de Zaragoza',
     abbr: 'Coah.',
-    area: '423967SKM',
-    largest_city: 'Los Angeles',
-    capital: 'Sacramento',
-    nickname: 'Golden State',
-    population: 39776830
+    area: '151,563 km2',
+    largest_city: 'Saltillo',
+    capital: 'Saltillo',
+    nickname: 'Estado Libre y Soberano de Coahuila de Zaragoza',
+    population: 3146771
   },
   {
     name: 'Colima',
     abbr: 'Col.',
-    area: '103642SKM',
-    largest_city: 'Denver',
-    capital: 'Denver',
-    nickname: 'Centennial State',
-    population: 5684203
+    area: '5,625 km2',
+    largest_city: 'Colima',
+    capital: 'Colima',
+    nickname: 'Estado Libre y Soberano de Colima',
+    population: 731391 
   },
   {
     name: 'Durango',

@@ -186,7 +186,7 @@ $(document).ready(function () {
                                 victoryDisplay(clickLocationData.state.name);
                             } else {
                                 $(".modal").modal('show');
-                                $(".modal").html("Hiciste clic sobre" + 
+                                $(".modal").html("Hiciste clic sobre " + 
                                     `${clickLocationData.state.name ? `${clickLocationData.state.name}` : ''}` + 
                                     `${clickLocationData.country.code !== "US" ? `, ${clickLocationData.country.name}` : ''}` +
                                     "<div id='proceed_button' class='modalInstructions'>" +
@@ -446,7 +446,7 @@ $(document).ready(function () {
             if (selectedGameType === 'worldCountries'){
                 prepareCountryMetadata(clickedCountryIndex);
                 $(".modal").append(countryMetadataMarkup());
-            } else if (selectedGameType === 'usStates') {
+            } else if (selectedGameType === 'mxStates') {
                 if (clickedStateIndex != -1) {
                     prepareStateMetadata(clickedStateIndex);
                     $(".modal").append(stateMetadataMarkup());
@@ -610,7 +610,7 @@ $(document).ready(function () {
 
     function stateMetadataMarkup() {
       return "<div class='modalInstructions'>" +
-      "Población: " + stateMetadata.population + ".<br>" +
+      "Población: " + stateMetadata.population + " habs.<br>" +
       (stateMetadata.capital ? "Capital: " + stateMetadata.capital + ".<br>" : "") +
       "Ciudad más grande: " + stateMetadata.largest_city + ".<br>" +
       "Nombre oficial: " + stateMetadata.nickname + ".<br>" +
