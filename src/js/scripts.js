@@ -1,4 +1,4 @@
-var usStateData = require('./data/us-states');
+//var usStateData = require('./data/us-states');
 var mxStateData = require('./data/mx-states');
 
 $(document).ready(function () {
@@ -55,7 +55,7 @@ $(document).ready(function () {
         initiateMapsteryGameplay('worldCountries');
     });
     $("#states_button").click(function () {
-        initiateMapsteryGameplay('usStates');
+        initiateMapsteryGameplay('mxStates');
     });
     $(".well").hide();
     $(".modal").modal('show');
@@ -132,11 +132,12 @@ $(document).ready(function () {
                         if (result.types.includes("natural_feature")) {
                             clickLocationData.natural_feature = result.address_components[0].long_name;
                         } else if (result.types.includes("administrative_area_level_1")) {
+                          //code: result.address_components[0].short_name.substring(0, 2)
                             clickLocationData.state = {
                                 name: result.address_components[0].long_name,
-                                code: result.address_components[0].short_name.substring(0, 2)
+                                code: result.address_components[0].short_name
                             };
-                            if (selectedGameType === 'usStates') clickedStateIndex = getClickedTerritoryIndex(selectedGameType, clickLocationData.state.code);
+                            if (selectedGameType === 'mxStates') clickedStateIndex = getClickedTerritoryIndex(selectedGameType, clickLocationData.state.code);
                         } else if (result.types.includes("country")) {
                             clickLocationData.country = {
                                 name: result.address_components[0].long_name,
@@ -178,9 +179,9 @@ $(document).ready(function () {
                             $(".modal").html("Hiciste clic sobre " + clickLocationData.country.name);
                             constructHint(mapRevealed);
                         }
-                    } else if (selectedGameType === 'usStates' && clickLocationData.state) {
+                    } else if (selectedGameType === 'mxStates' && clickLocationData.state) {
                         if (mapRevealed === false) {
-                            if (targetState.abbr === clickLocationData.state.code && clickLocationData.country.code === "US") {
+                            if (targetState.abbr === clickLocationData.state.code && clickLocationData.country.code === "MX") {
                                 placeMarker(event.latLng, 'green', clickLocationData.state.code);
                                 victoryDisplay(clickLocationData.state.name);
                             } else {
@@ -241,16 +242,16 @@ $(document).ready(function () {
                     console.error(error);
                 }
             });
-        } else if (gameType === 'usStates') {
+        } else if (gameType === 'mxStates') {
             // one potential alternative to storing US state data on the frontend
             // dataEndpoint = 'https://cors-anywhere.herokuapp.com/http://services.groupkt.com/state/get/USA/all';
 
-            potentialTargets = usStateData;
+            potentialTargets = mxStateData;
             map.setOptions({
                 zoom: (windowWidth > 500 ? 4 : 3),
                 center: {
-                    lat: 39.810556,
-                    lng: -98.556111
+                    lat: 19.4978,
+                    lng: -99.1269 
                 }
             });
             setUpState(potentialTargets);
@@ -512,7 +513,7 @@ $(document).ready(function () {
         if (selectedGameType === 'worldCountries') {
             $(".modal").html(msg + countryMetadataMarkup());
             $(".well").html(playAgainLinkMarkup);
-        } else if (selectedGameType === 'usStates') {
+        } else if (selectedGameType === 'mxStates') {
             $(".modal").html(msg + stateMetadataMarkup());
             $(".well").html(playAgainLinkMarkup);
         }
@@ -609,10 +610,10 @@ $(document).ready(function () {
 
     function stateMetadataMarkup() {
       return "<div class='modalInstructions'>" +
-      "Población: " + stateMetadata.population + "<br>" +
-      (stateMetadata.capital ? "Capital: " + stateMetadata.capital + "<br>" : "") +
-      "Ciudad más grande: " + stateMetadata.largest_city + "<br>" +
-      "Alias: " + stateMetadata.nickname + "<br>" +
+      "Población: " + stateMetadata.population + ".<br>" +
+      (stateMetadata.capital ? "Capital: " + stateMetadata.capital + ".<br>" : "") +
+      "Ciudad más grande: " + stateMetadata.largest_city + ".<br>" +
+      "Nombre oficial: " + stateMetadata.nickname + ".<br>" +
       exploreButtonMarkup + "</div>"
     }
 

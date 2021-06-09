@@ -1,70 +1,52 @@
 const mxStateData = [
   {
     name: 'Aguascalientes',
-    abbr: 'AL',
-    area: '135767SKM',
-    largest_city: 'Birmingham',
-    capital: 'Montgomery',
-    nickname: 'Yellowhammer State',
-    population: 4888949
+    abbr: 'Ags.',
+    area: '5,618 km2',
+    largest_city: 'Aguascalientes',
+    capital: 'Aguascalientes',
+    nickname: 'Estado Libre y Soberano de Aguascalientes',
+    population: 1425607
   },
   {
     name: 'Baja California',
-    abbr: 'AK',
-    area: '1723337SKM',
-    largest_city: 'Anchorage',
-    capital: 'Juneau',
-    nickname: 'Last Frontier',
-    population: 738068
+    abbr: 'B.C.',
+    area: '71,450 km2',
+    largest_city: 'Tijuana',
+    capital: 'Mexicali',
+    nickname: 'Estado Libre y Soberano de Baja California',
+    population: 3769020
   },
   {
     name: 'Baja California Sur',
-    abbr: 'AZ',
-    area: '113594SKM',
-    largest_city: 'Phoenix',
-    capital: 'Phoenix',
-    nickname: 'Grand Canyon State',
-    population: 7123898
+    abbr: 'B.C.S.',
+    area: '75,675 km2',
+    largest_city: 'La Paz',
+    capital: 'La Paz',
+    nickname: 'Estado Libre y Soberano de Baja California Sur',
+    population: 798447
   },
   {
     name: 'Campeche',
-    abbr: 'AR',
-    area: '52035SKM',
-    largest_city: 'Little Rock',
-    capital: 'Little Rock',
-    nickname: 'Natural State',
-    population: 3020327
-  },
-  {
-    name: 'Coahuila de Zaragoza',
-    abbr: 'CA',
-    area: '423967SKM',
-    largest_city: 'Los Angeles',
-    capital: 'Sacramento',
-    nickname: 'Golden State',
-    population: 39776830
-  },
-  {
-    name: 'Colima',
-    abbr: 'CO',
-    area: '103642SKM',
-    largest_city: 'Denver',
-    capital: 'Denver',
-    nickname: 'Centennial State',
-    population: 5684203
+    abbr: 'Camp.',
+    area: '57,924 km2',
+    largest_city: 'San Francisco de Campeche',
+    capital: 'San Francisco de Campeche',
+    nickname: 'Estado Libre y Soberano de Campeche',
+    population: 928363
   },
   {
     name: 'Chiapas',
-    abbr: 'CT',
-    area: '14357SKM',
-    largest_city: 'Bridgeport',
-    capital: 'Hartford',
-    nickname: 'Constitution State',
-    population: 3588683
+    abbr: 'Chis.',
+    area: '73,211 km2',
+    largest_city: 'Tuxtla Gutiérrez',
+    capital: 'Tuxtla Gutiérrez',
+    nickname: 'Estado Libre y Soberano de Chiapas',
+    population: 5217908
   },
   {
     name: 'Chihuahua',
-    abbr: 'DE',
+    abbr: 'Chih.',
     area: '6446SKM',
     largest_city: 'Wilmington',
     capital: 'Dover',
@@ -73,7 +55,7 @@ const mxStateData = [
   },
   {
     name: 'Ciudad de México',
-    abbr: 'FL',
+    abbr: 'C.D.Mx.',
     area: '170312SKM',
     largest_city: 'Jacksonville',
     capital: 'Tallahassee',
@@ -81,8 +63,26 @@ const mxStateData = [
     population: 21312211
   },
   {
+    name: 'Coahuila de Zaragoza',
+    abbr: 'Coah.',
+    area: '423967SKM',
+    largest_city: 'Los Angeles',
+    capital: 'Sacramento',
+    nickname: 'Golden State',
+    population: 39776830
+  },
+  {
+    name: 'Colima',
+    abbr: 'Col.',
+    area: '103642SKM',
+    largest_city: 'Denver',
+    capital: 'Denver',
+    nickname: 'Centennial State',
+    population: 5684203
+  },
+  {
     name: 'Durango',
-    abbr: 'GA',
+    abbr: 'Dgo.',
     area: '57513SKM',
     largest_city: 'Atlanta',
     capital: 'Atlanta',
@@ -91,7 +91,7 @@ const mxStateData = [
   },
   {
     name: 'Guanajuato',
-    abbr: 'HI',
+    abbr: 'Gto.',
     area: '6423SKM',
     largest_city: 'Honolulu',
     capital: 'Honolulu',
@@ -100,7 +100,7 @@ const mxStateData = [
   },
   {
     name: 'Guerrero',
-    abbr: 'ID',
+    abbr: 'Gro.',
     area: '82643SKM',
     largest_city: 'Boise',
     capital: 'Boise',
@@ -109,7 +109,7 @@ const mxStateData = [
   },
   {
     name: 'Hidalgo',
-    abbr: 'IL',
+    abbr: 'Hgo.',
     area: '149995SKM',
     largest_city: 'Chicago',
     capital: 'Springfield',
@@ -118,7 +118,7 @@ const mxStateData = [
   },
   {
     name: 'Jalisco',
-    abbr: 'IN',
+    abbr: 'Jal.',
     area: '35826SKM',
     largest_city: 'Indianapolis',
     capital: 'Indianapolis',
@@ -127,7 +127,7 @@ const mxStateData = [
   },
   {
     name: 'Estado de México',
-    abbr: 'IA',
+    abbr: 'Edo. Méx.',
     area: '55857SKM',
     largest_city: 'Des Moines',
     capital: 'Des Moines',
@@ -136,7 +136,7 @@ const mxStateData = [
   },
   {
     name: 'Michoacán de Ocampo',
-    abbr: 'KS',
+    abbr: 'Mich.',
     area: '213100SKM',
     largest_city: 'Wichita',
     capital: 'Topeka',
@@ -145,7 +145,7 @@ const mxStateData = [
   },
   {
     name: 'Morelo',
-    abbr: 'KY',
+    abbr: 'Mor.',
     area: '104656SKM',
     largest_city: 'Louisville',
     capital: 'Frankfort',
@@ -154,7 +154,7 @@ const mxStateData = [
   },
   {
     name: 'Nayarit',
-    abbr: 'LA',
+    abbr: 'Nay.',
     area: '135659SKM',
     largest_city: 'New Orleans',
     capital: 'Baton Rouge',
@@ -163,7 +163,7 @@ const mxStateData = [
   },
   {
     name: 'Nuevo León',
-    abbr: 'ME',
+    abbr: 'N.L.',
     area: '91633SKM',
     largest_city: 'Portland',
     capital: 'Augusta',
@@ -172,7 +172,7 @@ const mxStateData = [
   },
   {
     name: 'Oaxaca',
-    abbr: 'MD',
+    abbr: 'Oax.',
     area: '32131SKM',
     largest_city: 'Baltimore',
     capital: 'Annapolis',
@@ -181,7 +181,7 @@ const mxStateData = [
   },
   {
     name: 'Puebla',
-    abbr: 'MA',
+    abbr: 'Pue.',
     area: '7800SKM',
     largest_city: 'Boston',
     capital: 'Boston',
@@ -190,7 +190,7 @@ const mxStateData = [
   },
   {
     name: 'Querétaro',
-    abbr: 'MI',
+    abbr: 'Qro.',
     area: '250487SKM',
     largest_city: 'Detroit',
     capital: 'Lansing',
@@ -199,7 +199,7 @@ const mxStateData = [
   },
   {
     name: 'Quintana Roo',
-    abbr: 'OK',
+    abbr: 'Q. Roo.',
     area: '68595SKM',
     largest_city: 'Oklahoma City',
     capital: 'Oklahoma City',
@@ -208,7 +208,7 @@ const mxStateData = [
   },
   {
     name: 'San Luis Potosí',
-    abbr: 'OR',
+    abbr: 'S.L.P.',
     area: '254799SKM',
     largest_city: 'Portland',
     capital: 'Salem',
@@ -217,7 +217,7 @@ const mxStateData = [
   },
   {
     name: 'Sinaloa',
-    abbr: 'PA',
+    abbr: 'Sin.',
     area: '119280SKM',
     largest_city: 'Philadelphia',
     capital: 'Harrisburg',
@@ -226,7 +226,7 @@ const mxStateData = [
   },
   {
     name: 'Sonora',
-    abbr: 'RI',
+    abbr: 'Son.',
     area: '1034SKM',
     largest_city: 'Providence',
     capital: 'Providence',
@@ -235,7 +235,7 @@ const mxStateData = [
   },
   {
     name: 'Tabasco',
-    abbr: 'SC',
+    abbr: 'Tab.',
     area: '82933SKM',
     largest_city: 'Charleston',
     capital: 'Columbia',
@@ -244,7 +244,7 @@ const mxStateData = [
   },
   {
     name: 'Tamaulipas',
-    abbr: 'SD',
+    abbr: 'Tamps.',
     area: '199729SKM',
     largest_city: 'Sioux Falls',
     capital: 'Pierre',
@@ -253,7 +253,7 @@ const mxStateData = [
   },
   {
     name: 'Tlaxcala',
-    abbr: 'TN',
+    abbr: 'Tlax.',
     area: '41235SKM',
     largest_city: 'Nashville',
     capital: 'Nashville',
@@ -262,7 +262,7 @@ const mxStateData = [
   },
   {
     name: 'Veracruz de Ignacio de la Llave',
-    abbr: 'TX',
+    abbr: 'Ver.',
     area: '695662SKM',
     largest_city: 'Houston',
     capital: 'Austin',
@@ -271,7 +271,7 @@ const mxStateData = [
   },
   {
     name: 'Yucatán',
-    abbr: 'UT',
+    abbr: 'Yuc.',
     area: '82170SKM',
     largest_city: 'Salt Lake City',
     capital: 'Salt Lake City',
@@ -280,7 +280,7 @@ const mxStateData = [
   },
   {
     name: 'Zacatecas',
-    abbr: 'MN',
+    abbr: 'Zac.',
     area: '225163SKM',
     largest_city: 'Minneapolis',
     capital: 'St. Paul',
